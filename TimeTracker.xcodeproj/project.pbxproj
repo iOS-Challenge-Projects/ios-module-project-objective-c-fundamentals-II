@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		04C054D7252750B80032C6DD /* FGTTimedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C054D6252750B80032C6DD /* FGTTimedTask.m */; };
 		04C054E22527712F0032C6DD /* FGTTimedTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C054E12527712F0032C6DD /* FGTTimedTaskController.m */; };
+		04C054EB252778EE0032C6DD /* FGTTimeTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C054EA252778EE0032C6DD /* FGTTimeTrackerViewController.m */; };
 		467FC83C23F3738B00C15592 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467FC83B23F3738B00C15592 /* AppDelegate.m */; };
 		467FC83F23F3738B00C15592 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 467FC83E23F3738B00C15592 /* SceneDelegate.m */; };
 		467FC84523F3738B00C15592 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 467FC84323F3738B00C15592 /* Main.storyboard */; };
@@ -22,6 +23,8 @@
 		04C054D6252750B80032C6DD /* FGTTimedTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTTimedTask.m; sourceTree = "<group>"; };
 		04C054E02527712F0032C6DD /* FGTTimedTaskController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGTTimedTaskController.h; sourceTree = "<group>"; };
 		04C054E12527712F0032C6DD /* FGTTimedTaskController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTTimedTaskController.m; sourceTree = "<group>"; };
+		04C054E9252778EE0032C6DD /* FGTTimeTrackerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGTTimeTrackerViewController.h; sourceTree = "<group>"; };
+		04C054EA252778EE0032C6DD /* FGTTimeTrackerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGTTimeTrackerViewController.m; sourceTree = "<group>"; };
 		467FC83723F3738B00C15592 /* TimeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		467FC83A23F3738B00C15592 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		467FC83B23F3738B00C15592 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +66,15 @@
 			path = "Model Controller";
 			sourceTree = "<group>";
 		};
+		04C054ED252778FD0032C6DD /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04C054E9252778EE0032C6DD /* FGTTimeTrackerViewController.h */,
+				04C054EA252778EE0032C6DD /* FGTTimeTrackerViewController.m */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		467FC82E23F3738B00C15592 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +94,7 @@
 		467FC83923F3738B00C15592 /* TimeTracker */ = {
 			isa = PBXGroup;
 			children = (
+				04C054ED252778FD0032C6DD /* View Controller */,
 				04C054E4252771340032C6DD /* Model Controller */,
 				04C054DC252750CF0032C6DD /* Model */,
 				467FC85423F373D300C15592 /* Storyboards */,
@@ -188,6 +201,7 @@
 				04C054D7252750B80032C6DD /* FGTTimedTask.m in Sources */,
 				467FC83C23F3738B00C15592 /* AppDelegate.m in Sources */,
 				467FC84D23F3738C00C15592 /* main.m in Sources */,
+				04C054EB252778EE0032C6DD /* FGTTimeTrackerViewController.m in Sources */,
 				467FC83F23F3738B00C15592 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,8 +27,10 @@
 //Implement the second method
 - (void)createTimedTaskWithClient: (NSString *)client summary:(NSString *)summary rate: (NSNumber *)rate hours: (NSNumber *)hours{
  
+    //Init a new FGTTimedTask object
     FGTTimedTask *newTask = [[FGTTimedTask alloc] initWithClient:client summary:summary rate:rate hours:hours];
     
+    //Add the newly created FGTTimedTask object to the array of FGTTimedTask's
     [_timeTasks addObject:newTask];
 };
 
