@@ -10,4 +10,24 @@
 
 @implementation FGTTimedTaskController
 
+
+//Implement the init method to set the properties
+- (instancetype)initWithTimeTasks: (NSMutableArray *)timeTasks{
+    
+    self = [super init];
+    
+    if (self){
+        _timeTasks = timeTasks;
+    }
+    
+    return self;
+}
+
+
+//Implement the second method
+- (void)createTimedTaskWithClient: (NSString *)client summary:(NSString *)summary rate: (NSNumber *)rate hours: (NSNumber *)hours{
+    
+}
+
+
 @end
