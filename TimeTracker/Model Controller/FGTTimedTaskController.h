@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithTimeTasks: (NSMutableArray *)timeTasks;
 
-- (void)createTimedTaskWithClient: (NSString *)client summary:(NSString *)summary rate: (NSNumber *)rate hours: (NSNumber *)hours;
+- (void)createTimedTaskWithClient: (NSString *)client summary:(NSString *)summary rate: (NSString *)rate hours: (NSString *)hours;
  
 @end
 

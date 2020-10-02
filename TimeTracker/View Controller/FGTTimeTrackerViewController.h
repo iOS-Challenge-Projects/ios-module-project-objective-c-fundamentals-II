@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 //Adopt UITableViewDataSource protocol
-@interface FGTTimeTrackerViewController : UIViewController <UITableViewDataSource>
+@interface FGTTimeTrackerViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
