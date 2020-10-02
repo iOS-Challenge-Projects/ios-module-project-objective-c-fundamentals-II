@@ -16,7 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property NSString *summary;
 @property NSNumber *rate;
 @property NSNumber *hours;
-@property NSNumber *total;
+@property (readonly) NSNumber *total;
+
+- (instancetype)initWithClient: (NSString *)client summary:(NSString *)summary rate: (NSNumber *)rate hours: (NSNumber *)hours total: (NSNumber *)total;
 
 
 @end
