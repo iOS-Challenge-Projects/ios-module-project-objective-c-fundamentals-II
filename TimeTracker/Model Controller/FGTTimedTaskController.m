@@ -17,7 +17,7 @@
     self = [super init];
     
     if (self){
-        _timeTasks = timeTasks;
+        _timeTasks = [[NSMutableArray alloc]  init];
     }
     
     return self;
@@ -26,8 +26,11 @@
 
 //Implement the second method
 - (void)createTimedTaskWithClient: (NSString *)client summary:(NSString *)summary rate: (NSNumber *)rate hours: (NSNumber *)hours{
+ 
+    FGTTimedTask *newTask = [[FGTTimedTask alloc] initWithClient:client summary:summary rate:rate hours:hours];
     
-}
+    [_timeTasks addObject:newTask];
+};
 
 
 @end
