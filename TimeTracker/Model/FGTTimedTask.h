@@ -12,13 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FGTTimedTask : NSObject
 
-@property NSString *client;
-@property NSString *summary;
-@property NSNumber *rate;
-@property NSNumber *hours;
-@property (readonly) NSNumber *total;
+//Use nonatomic to prevent over release (Dont increase ARC count)
+//Copy will create a new object copy/pointer every time is changed
+@property (nonatomic, copy) NSString *client;
+@property (nonatomic,copy) NSString *summary;
+@property (nonatomic) NSNumber *rate;
+@property (nonatomic) NSNumber *hours;
 
-- (instancetype)initWithClient: (NSString *)client summary:(NSString *)summary rate: (NSNumber *)rate hours: (NSNumber *)hours total: (NSNumber *)total;
+//Use readonly to crete our own setter instead of automatically create it
+@property (readonly,nonatomic) double total;
+
+- (instancetype)initWithClient: (NSString *)client summary:(NSString *)summary rate: (NSNumber *)rate hours: (NSNumber *)hours;
 
 
 @end
