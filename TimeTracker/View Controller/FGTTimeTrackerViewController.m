@@ -28,9 +28,6 @@
 
 @implementation FGTTimeTrackerViewController
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -39,43 +36,25 @@
     self.timedTaskController =  [[FGTTimedTaskController alloc] init];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+#pragma Actions
 - (IBAction)logTimeButton:(UIButton *)sender {
-    NSString *name = _nameTextField.text;
-    NSString *summary = _summaryTextField.text;
-    NSString *rate = _hoursTextField.text;
-    NSString *hours = _timeTextField.text;
+    [self saveData];
     
     
-    //Create a new task
-    [_timedTaskController createTimedTaskWithClient:name summary:summary rate:rate hours:hours];
-    
-    //Reload tableView
-    [self.tableView reloadData];
-    
-    //Clear fields
-    self.nameTextField.text = @"Fritz";
-    self.summaryTextField.text = @"Work a lot";
-    self.hoursTextField.text = @"50";
-    self.timeTextField.text = @"40";
     
 }
 
+#pragma Tableview methods
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
     
     
-    FGTTimedTask *task = self.timedTaskController.timeTasks[indexPath.row];
     
-    cell.largeContentTitle = task.client;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeLogCell" forIndexPath:indexPath];
+    
+    
+    FGTTimedTask *task = [self.timedTaskController.timeTasks objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = task.client;
     cell.detailTextLabel.text = task.summary;
     
     return cell;
@@ -85,5 +64,30 @@
     return self.timedTaskController.timeTasks.count;
 }
 
+#pragma Custom methods / helpers
+
+-(void)saveData{
+    NSString *name = _nameTextField.text;
+    NSString *summary = _summaryTextField.text;
+    NSString *rate = _hoursTextField.text;
+    NSString *hours = _timeTextField.text;
+    
+    
+    //Create a new task
+    [self.timedTaskController createTimedTaskWithClient:name summary:summary rate:rate hours:hours];
+    
+    [self updateViews];
+}
+
+-(void)updateViews{
+    //Reload tableView
+    [self.tableView reloadData];
+    
+    //Clear fields
+    self.nameTextField.text = @"Fritz";
+    self.summaryTextField.text = @"Work a lot";
+    self.hoursTextField.text = @"50";
+    self.timeTextField.text = @"40";
+}
 
 @end
