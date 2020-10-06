@@ -61,7 +61,7 @@
     FGTTimedTask *task = [self.timedTaskController.timeTasks objectAtIndex:indexPath.row];
     
     cell.textLabel.text = task.client;
-    cell.detailTextLabel.text = task.summary;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"$%1.f", task.total];
     
     return cell;
 }
