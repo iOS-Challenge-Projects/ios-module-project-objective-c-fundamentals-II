@@ -25,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *timeTextField;
 
 
+-(void)saveData;
+-(void)updateViews;
 
 @end
 
@@ -33,10 +35,11 @@
 #pragma mark – View Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.timedTaskController =  [[FGTTimedTaskController alloc] init];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.timedTaskController =  [[FGTTimedTaskController alloc] init];
+    
 }
 
 #pragma mark – Actions
@@ -48,9 +51,9 @@
 }
 
 #pragma mark – Tableview methods
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    
-    
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimeLogCell" forIndexPath:indexPath];
     
@@ -63,11 +66,12 @@
     return cell;
 }
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return self.timedTaskController.timeTasks.count;
 }
 
-#pragma mark – Custom methods / helpers
+#pragma mark – Private methods
 
 -(void)saveData{
     NSString *name = _nameTextField.text;
@@ -83,6 +87,8 @@
 }
 
 -(void)updateViews{
+    
+    
     //Reload tableView
     [self.tableView reloadData];
     

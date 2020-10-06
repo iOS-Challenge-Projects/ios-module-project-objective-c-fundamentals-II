@@ -16,13 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 //Copy will create a new object copy/pointer every time is changed
 @property (nonatomic, copy) NSString *client;
 @property (nonatomic,copy) NSString *summary;
-@property (nonatomic) NSNumber *rate;
-@property (nonatomic) NSNumber *hours;
+@property (nonatomic) double rate;
+@property (nonatomic) double hours;
 
 //Use readonly to crete our own setter instead of automatically create it
 @property (readonly,nonatomic) double total;
 
-- (instancetype)initWithClient: (NSString *)client summary:(NSString *)summary rate: (NSNumber *)rate hours: (NSNumber *)hours;
+- (instancetype)initWithClient: (NSString *)client summary:(NSString *)summary rate: (double)rate hours: (double)hours;
 
 
 @end

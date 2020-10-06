@@ -12,7 +12,7 @@
 
 
 //Implement the init method to set the properties
-- (instancetype)initWithTimeTasks: (NSMutableArray *)timeTasks{
+- (instancetype)init{
     
     self = [super init];
     
@@ -27,14 +27,14 @@
 //Implement the second method
 - (void)createTimedTaskWithClient: (NSString *)client summary:(NSString *)summary rate: (NSString *)rate hours: (NSString *)hours{
     
-    NSNumber *rateNum = [[NSNumberFormatter alloc] numberFromString:rate];
-    NSNumber *hoursNum = [[NSNumberFormatter alloc] numberFromString:hours];
+    double rateNum = [rate doubleValue];
+    double hoursNum = [hours doubleValue];
  
     //Init a new FGTTimedTask object
     FGTTimedTask *newTask = [[FGTTimedTask alloc] initWithClient:client summary:summary rate:rateNum hours:hoursNum];
     
     //Add the newly created FGTTimedTask object to the array of FGTTimedTask's
-    [_timeTasks addObject: newTask];
+    [self.timeTasks addObject: newTask];
 };
 
 

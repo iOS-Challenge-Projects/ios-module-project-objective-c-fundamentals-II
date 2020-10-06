@@ -10,7 +10,7 @@
 
 @implementation FGTTimedTask
 
-- (instancetype)initWithClient: (NSString *)client summary:(NSString *)summary rate: (NSNumber *)rate hours: (NSNumber *)hours {
+- (instancetype)initWithClient: (NSString *)client summary:(NSString *)summary rate: (double)rate hours: (double)hours {
     
     self = [super init];
     
@@ -25,7 +25,7 @@
 };
 
 -(double)total{
-    double total = [_hours doubleValue] * [_rate doubleValue];
+    double total = _hours * _rate;
     return total;
 }
 
