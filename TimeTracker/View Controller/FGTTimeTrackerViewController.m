@@ -12,9 +12,11 @@
 //in the interface with put any private property and the the outlets
 @interface FGTTimeTrackerViewController ()
 
-#pragma Properties
+#pragma mark – Properties
 
 @property (nonatomic) FGTTimedTaskController *timedTaskController;
+
+#pragma mark – Oulets
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -28,6 +30,7 @@
 
 @implementation FGTTimeTrackerViewController
 
+#pragma mark – View Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -36,7 +39,7 @@
     self.timedTaskController =  [[FGTTimedTaskController alloc] init];
 }
 
-#pragma Actions
+#pragma mark – Actions
 - (IBAction)logTimeButton:(UIButton *)sender {
     [self saveData];
     
@@ -44,7 +47,7 @@
     
 }
 
-#pragma Tableview methods
+#pragma mark – Tableview methods
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     
@@ -64,7 +67,7 @@
     return self.timedTaskController.timeTasks.count;
 }
 
-#pragma Custom methods / helpers
+#pragma mark – Custom methods / helpers
 
 -(void)saveData{
     NSString *name = _nameTextField.text;
